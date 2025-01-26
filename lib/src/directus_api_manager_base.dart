@@ -760,18 +760,21 @@ class DirectusApiManager implements IDirectusApiManager {
   }
 
   @override
-  Future<bool> registerDirectusUser(
-      {required String email,
-      required String password,
-      String? firstname,
-      String? lastname}) {
+  Future<bool> registerDirectusUser({
+    required String email,
+    required String password,
+    String? firstname,
+    String? lastname,
+    String? roleUUID,
+  }) {
     return _sendRequest(
         canSaveResponseToCache: false,
         prepareRequest: () => _api.prepareRegisterUserRequest(
-            email: email,
-            password: password,
-            firstname: firstname,
-            lastname: lastname),
+              email: email,
+              password: password,
+              firstname: firstname,
+              lastname: lastname,
+            ),
         parseResponse: _api.parseGenericBoolResponse);
   }
 }
