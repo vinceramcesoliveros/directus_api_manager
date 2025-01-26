@@ -774,6 +774,7 @@ class DirectusApiManager implements IDirectusApiManager {
               password: password,
               firstname: firstname,
               lastname: lastname,
+              roleUUID: roleUUID,
             ),
         parseResponse: _api.parseGenericBoolResponse);
   }
